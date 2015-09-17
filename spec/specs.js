@@ -14,3 +14,19 @@ describe('makeDeck', function() {
     expect(deck[14]).to.eql(["Diamonds", "2"]);
   });
 });
+
+describe('shuffle', function() {
+  it("returns an randomized deck array", function() {
+    var deck = makeDeck();
+    expect(deck[0]).to.eql(["Clubs", "A"]);
+    var shuffledDeck = shuffle(deck);
+    expect(deck[0]).to.not.eql(["Clubs", "A"]);
+  });
+
+  it("returns a deck of 52 cards", function() {
+    var deck = makeDeck();
+    var shuffledDeck = shuffle(deck);
+    expect(shuffledDeck).to.have.length(52);
+  });
+
+});
