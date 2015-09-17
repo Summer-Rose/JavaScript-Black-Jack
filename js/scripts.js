@@ -1,6 +1,3 @@
-//TODO: generate deck via function
-
-
 function makeDeck() {
     var deck = [];
     var suits = ["Clubs", "Diamonds", "Hearts", "Spades"];
@@ -11,11 +8,28 @@ function makeDeck() {
         for (var j = 0; j < ranks.length; j++) {
           var card = [suits[i], ranks[j]];
           deck.push(card);
-          debugger;
+          //debugger;
         }
     }
     return deck;
+
 };
+
+// helper function for makeDeck
+
+function shuffle(deck) {
+  var shuffledDeck = [];
+  for (var i = deck.length; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var randomCard = deck[i];
+    deck[i] = deck[j];
+    deck[j] = randomCard;
+    shuffledDeck.push(randomCard);
+  }
+  return shuffledDeck;
+}
+
+
 
 //
 // $(document).ready(function() {
