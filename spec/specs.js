@@ -1,3 +1,12 @@
+describe('newGame', function() {
+  it("calls shuffle function and saves return in playDeck var", function() {
+    newGame();
+    expect(playDeck[0]).to.not.eql(["Clubs", "A"]);
+  });
+});
+
+
+
 describe('makeDeck', function() {
   it("returns an array of cards", function() {
     var deck = makeDeck();
@@ -34,9 +43,9 @@ describe('deal', function() {
   it("returns two hands and remaining cards", function() {
     var deck = makeDeck();
     var shuffledDeck = shuffle(deck);
-    var remaining = deal(shuffledDeck, 2);
-    var userHand = remaining[1];
-    expect(remaining).to.include(userHand);
+    var userHand = [];
+    deal(shuffledDeck, userHand);
+    expect(userHand).to.have.length(1);
   });
 });
 
