@@ -1,3 +1,5 @@
+var playDeck = [];
+
 function makeDeck() {
     var deck = [];
     var suits = ["Clubs", "Diamonds", "Hearts", "Spades"];
@@ -17,9 +19,9 @@ function shuffle(deck) {
   return deck;
 }
 
-function deal(shuffledDeck) {
-  var computerHand = shuffledDeck.splice(0, 2);
-  var userHand = shuffledDeck.splice(0, 2);
+function deal(shuffledDeck, num) {
+  var computerHand = shuffledDeck.splice(0, num);
+  var userHand = shuffledDeck.splice(0, num);
   var remaining = [];
   remaining.push(computerHand);
   remaining.push(userHand);
@@ -31,14 +33,25 @@ function calculateHandValue(hand) {
   var handValue = 0;
 
   for (var i = 0; i < hand.length; i++) {
-    var faceCards = ["JQK"]
+
+    /* loop to assign value to face cards */
+    var faceCards = ["J", "Q", "K"];
     if (faceCards.indexOf(hand[i][1]) !==-1) {
       handValue += 10;
     }
+
+    /* loop to assign value to number cards */
     var numberCards = ["2", "3", "4", "5", "6", "7", "8", "9", "10"];
     if (numberCards.indexOf(hand[i][1]) !==-1) {
       var integer = parseInt(hand[i][1]);
       handValue += integer;
+    }
+
+    //TODO: add function to allow compute and user to choose pt. val for Ace
+    /* for now, always assign A- 11 points*/
+    var ace = "A";
+    if (ace.match(hand[i][1])) {
+      handValue += 11;
     }
   }
 
