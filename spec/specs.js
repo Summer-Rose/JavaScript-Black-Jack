@@ -39,3 +39,9 @@ describe('deal', function() {
     expect(remaining).to.include(userHand);
   });
 });
+
+describe('calculateHandValue', function() {
+  it("adds the value of each card in a hand", function() {
+    expect(calculateHandValue([["Clubs", "2"], ["Spades", "9"]])).to.equal(11);
+  })
+})
