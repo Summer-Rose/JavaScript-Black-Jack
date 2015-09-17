@@ -28,5 +28,14 @@ describe('shuffle', function() {
     var shuffledDeck = shuffle(deck);
     expect(shuffledDeck).to.have.length(52);
   });
+});
 
+describe('deal', function() {
+  it("returns two hands and remaining cards", function() {
+    var deck = makeDeck();
+    var shuffledDeck = shuffle(deck);
+    var remaining = deal(shuffledDeck);
+    var userHand = remaining[1];
+    expect(remaining).to.include(userHand);
+  });
 });
