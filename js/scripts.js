@@ -14,14 +14,7 @@ function makeDeck() {
 
 function shuffle(deck) {
   for(var j, x, i = deck.length; i; j = Math.floor(Math.random() * i), x = deck[--i], deck[i] = deck[j], deck[j] = x);
-  debugger;
   return deck;
-}
-
-function generateHand(cards) {
-  var hand = cards.splice(0, 2);
-  var remainingCards = cards;
-  return [hand, remainingCards];
 }
 
 function deal(shuffledDeck) {
@@ -31,6 +24,7 @@ function deal(shuffledDeck) {
   remaining.push(computerHand);
   remaining.push(userHand);
   remaining.push(shuffledDeck);
+  debugger;
   return remaining;
 }
 
