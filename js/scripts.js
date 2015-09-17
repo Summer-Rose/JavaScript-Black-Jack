@@ -1,4 +1,17 @@
-var playDeck = [];
+function newGame() {
+  var deck = makeDeck();
+  var playDeck = shuffle(deck);
+  var computerHand = [];
+  var userHand = [];
+  deal(playDeck, computerHand);
+  deal(playDeck, computerHand);
+  deal(playDeck, userHand);
+  deal(playDeck, userHand);
+  var computerScore = calculateHandValue(computerHand);
+  var userScore = calculateHandValue(userHand);
+  //userPlay
+  //determine winner
+}
 
 function makeDeck() {
     var deck = [];
@@ -19,14 +32,11 @@ function shuffle(deck) {
   return deck;
 }
 
-function deal(shuffledDeck, num) {
-  var computerHand = shuffledDeck.splice(0, num);
-  var userHand = shuffledDeck.splice(0, num);
-  var remaining = [];
-  remaining.push(computerHand);
-  remaining.push(userHand);
-  remaining.push(shuffledDeck);
-  return remaining;
+// function dealFlop(playDeck, playerHand, dealerHand)
+
+function deal(playDeck, hand) {
+  hand.push(playDeck.pop());
+  debugger;
 }
 
 function calculateHandValue(hand) {
@@ -54,7 +64,6 @@ function calculateHandValue(hand) {
       handValue += 11;
     }
   }
-
   return handValue;
 }
 
