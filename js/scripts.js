@@ -24,8 +24,25 @@ function deal(shuffledDeck) {
   remaining.push(computerHand);
   remaining.push(userHand);
   remaining.push(shuffledDeck);
-  debugger;
   return remaining;
+}
+
+function calculateHandValue(hand) {
+  var handValue = 0;
+
+  for (var i = 0; i < hand.length; i++) {
+    var faceCards = ["JQK"]
+    if (faceCards.indexOf(hand[i][1]) !==-1) {
+      handValue += 10;
+    }
+    var numberCards = ["2", "3", "4", "5", "6", "7", "8", "9", "10"];
+    if (numberCards.indexOf(hand[i][1]) !==-1) {
+      var integer = parseInt(hand[i][1]);
+      handValue += integer;
+    }
+  }
+
+  return handValue;
 }
 
 //
