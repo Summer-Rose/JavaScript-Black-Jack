@@ -34,7 +34,7 @@ describe('deal', function() {
   it("returns two hands and remaining cards", function() {
     var deck = makeDeck();
     var shuffledDeck = shuffle(deck);
-    var remaining = deal(shuffledDeck);
+    var remaining = deal(shuffledDeck, 2);
     var userHand = remaining[1];
     expect(remaining).to.include(userHand);
   });
@@ -43,5 +43,14 @@ describe('deal', function() {
 describe('calculateHandValue', function() {
   it("adds the value of each card in a hand", function() {
     expect(calculateHandValue([["Clubs", "2"], ["Spades", "9"]])).to.equal(11);
-  })
+  });
+
+  it("adds the correct value for face cards", function() {
+    expect(calculateHandValue([["Clubs", "J"], ["Hearts", "Q"]])).to.equal(20);
+  });
+
+  it("adds 11 points for Aces", function() {
+    expect(calculateHandValue([["Clubs", "A"], ["Hearts", "Q"]])).to.equal(21);
+  });
+
 })
