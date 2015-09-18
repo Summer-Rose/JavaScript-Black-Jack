@@ -3,6 +3,10 @@ describe('newGame', function() {
     newGame();
     expect(playDeck[0]).to.not.eql(["Clubs", "A"]);
   });
+
+  it("returns an array with dealer and player hands", function() {
+    expect(newGame()).to.have.length(2);
+  });
 });
 
 
