@@ -9,7 +9,7 @@ Try to beat the dealer.
 ## Setup
 
 * Clone this git repository on your computer ```git clone  https://github.com/SummerBr/blackjack.git```
-* To open in your browser, navigate to correct directory ```cd path/to/blackjack``` and type ```open index.html```
+* To open in your browser, navigate to correct directory ```cd path/to/blackjack``` and type ```open blackjack.html```
 
 ## Tests
 
