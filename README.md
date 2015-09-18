@@ -1,6 +1,6 @@
 # Blackjack
 
-#### By Diana Holland
+#### By Summer Brochtrup & Diana Holland
 
 ## Description
 
@@ -8,8 +8,8 @@ Try to beat the dealer.
 
 ## Setup
 
-* Clone this git repository on your computer ```git clone  https://github.com/theholla/blackjack.git```
-* To open in your browser, navigate to correct directory ```cd path/to/blackjack``` and type ```open blackjack.html```
+* Clone this git repository on your computer ```git clone  https://github.com/SummerBr/blackjack.git```
+* To open in your browser, navigate to correct directory ```cd path/to/blackjack``` and type ```open index.html```
 
 ## Tests
 
@@ -17,11 +17,17 @@ Mocha and Chai
 
 ## Technologies Used
 
-JavaScript, HTML5, and CSS3
+* JavaScript
+* jQuery
+* Mocha
+* Chai
+* Bootstrap
+* HTML
+* CSS
 
 ### Legal
 
-Copyright (c) 2015 Diana Holland
+Copyright (c) 2015 Summer Brochtrup & Diana Holland
 
 This software is licensed under the MIT license.
 
