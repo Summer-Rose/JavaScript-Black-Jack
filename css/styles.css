@@ -1,5 +1,3 @@
-body {
-	background-color: #;}
-
-h1, h3 {
-	text-align: center;}
+.game-area {
+	display: none;
+}
