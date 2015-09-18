@@ -9,6 +9,9 @@ function newGame() {
   deal(playDeck, userHand);
   var computerScore = calculateHandValue(computerHand);
   var userScore = calculateHandValue(userHand);
+  var newGameResults = [];
+  newGameResults.push(computerHand, userHand);
+  return newGameResults;
   //userPlay
   //determine winner
 }
@@ -67,8 +70,21 @@ function calculateHandValue(hand) {
   return handValue;
 }
 
-//
-// $(document).ready(function() {
-//
-//   });
-// });
+
+$(document).ready(function() {
+  $("form#name-form").submit(function() {
+    var username = $("input#username").val();
+    $(".start").hide();
+    $(".game-area").show();
+    $(".name").text(username);
+
+    var newGameHands = newGame();
+    var userInitialScore = calculateHandValue(newGameHands[1]);
+
+    $(".userHand").text(newGameHands[1]);
+    $(".initial-score").text(userInitialScore);
+
+
+    event.preventDefault();
+  });
+});
